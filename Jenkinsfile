@@ -18,14 +18,14 @@ pipeline {
               steps {
                    dir("tp2jenkins"){
                       sh "mvn clean install"
-                      sh "docker build -t docexp1-spring ."
+                      sh "docker build -t docexp1-spring ."  docexp1-spring
                   }                
               }
           }
         stage ("Run docker compose") {
             steps {
                  dir("tp2jenkins"){
-                    sh "docker compose up -d"
+                    sh "docker-compose up -d"
                 }                
             }
         }
